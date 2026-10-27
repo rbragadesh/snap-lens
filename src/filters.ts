@@ -1,0 +1,18 @@
+export const FILTERS: { id: string; name: string; icon: string }[] = [
+  { id: 'none', name: 'Normal', icon: '⭕' },
+  { id: 'cartoon', name: 'Cartoon', icon: '🖍️' },
+  { id: 'scribble', name: 'Scribble', icon: '✏️' },
+  { id: 'comic', name: 'Comic', icon: '💥' },
+  { id: 'dreamy', name: 'Dreamy', icon: '☁️' },
+  { id: 'popart', name: 'Pop Art', icon: '🟪' },
+  { id: 'pixel', name: '8-Bit', icon: '👾' },
+  { id: 'neon', name: 'Neon', icon: '🌃' },
+  { id: 'disco', name: 'Disco', icon: '🪩' },
+  { id: 'underwater', name: 'Underwater', icon: '🌊' },
+  { id: 'kaleido', name: 'Kaleido', icon: '🔮' },
+  { id: 'mirror', name: 'Mirror', icon: '🪞' },
+  { id: 'thermal', name: 'Heat Vision', icon: '🔥' },
+  { id: 'glitch', name: 'Glitch', icon: '📺' },
+  { id: 'vintage', name: 'Vintage', icon: '📜' },
+  { id: 'oldmovie', name: 'Old Movie', icon: '🎞️' },
+];

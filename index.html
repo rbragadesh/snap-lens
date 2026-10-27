@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="theme-color" content="#1a1033" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Snap Lens" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" type="image/png" href="./icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+    <title>Snap Lens</title>
+  </head>
+  <body>
+    <div id="app">
+      <main id="stage">
+        <canvas id="view"></canvas>
+        <div id="flash"></div>
+        <div id="countdown"></div>
+        <div id="rec-badge" hidden>● REC</div>
+      </main>
+
+      <div id="bubbles">
+        <div id="loading" class="bubble" hidden></div>
+        <div id="tip" class="bubble" hidden></div>
+      </div>
+
+      <header id="top">
+        <button id="btn-parent" class="round small" aria-label="Grown-ups">⚙️</button>
+        <button id="btn-back" class="pill" hidden>✖ Back to camera</button>
+        <div class="spacer"></div>
+      </header>
+
+      <nav id="side">
+        <button id="btn-flip" class="round" aria-label="Flip camera">🔄</button>
+        <button id="btn-flash" class="round" aria-label="Flash">⚡<b></b></button>
+        <button id="btn-timer" class="round" aria-label="Timer">⏱️<b></b></button>
+        <button id="btn-voice" class="round" aria-label="Voice">🎤<b></b></button>
+        <button id="btn-filter" class="round" aria-label="Filters">🎨</button>
+        <button id="btn-upload" class="round" aria-label="Use a photo or video">🖼️</button>
+      </nav>
+
+      <section id="dock">
+        <div id="lens-name"></div>
+        <div id="variants" class="chips"></div>
+        <div id="filters" class="chips" hidden></div>
+        <div id="groups" class="chips small"></div>
+        <div id="carousel-wrap">
+          <div id="carousel"></div>
+          <button id="shutter" aria-label="Take a picture. Hold to record a video.">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <circle class="ring" cx="50" cy="50" r="45" />
+              <circle class="progress" cx="50" cy="50" r="45" />
+            </svg>
+          </button>
+        </div>
+        <button id="btn-memories" class="round big" aria-label="Memories">📚</button>
+      </section>
+
+      <section id="review" class="overlay" hidden>
+        <div class="media-area"><div class="frame"></div></div>
+        <div class="toolbar left"><button class="round" data-act="discard" aria-label="Throw away">✖</button></div>
+        <div class="toolbar right photo-only">
+          <button class="round" data-act="draw" aria-label="Draw">✏️</button>
+          <button class="round" data-act="sticker" aria-label="Stickers">😀</button>
+          <button class="round" data-act="undo" aria-label="Undo">↩️</button>
+        </div>
+        <div class="palette chips" hidden></div>
+        <div class="sticker-sheet" hidden></div>
+        <button class="pill big save" data-act="save">💾 Save</button>
+      </section>
+
+      <section id="memories" class="overlay" hidden>
+        <header class="sheet-head">
+          <button class="round" data-act="close" aria-label="Close">✖</button>
+          <h2>My Memories</h2>
+          <span class="count"></span>
+        </header>
+        <div class="grid"></div>
+        <p class="empty" hidden>Nothing here yet!<br />Take a picture with the big button 📸</p>
+      </section>
+
+      <section id="viewer" class="overlay" hidden>
+        <div class="media-area"><div class="frame"></div></div>
+        <div class="toolbar left"><button class="round" data-act="close" aria-label="Close">✖</button></div>
+        <div class="toolbar right">
+          <button class="round" data-act="prev" aria-label="Previous">◀️</button>
+          <button class="round" data-act="next" aria-label="Next">▶️</button>
+          <button class="round" data-act="export" aria-label="Save to Photos">📤</button>
+          <button class="round" data-act="delete" aria-label="Delete">🗑️</button>
+        </div>
+      </section>
+
+      <section id="parent" class="overlay scroll" hidden></section>
+      <section id="pinpad" class="overlay" hidden></section>
+      <section id="voices" class="sheet" hidden></section>
+      <section id="dialog" class="overlay dim" hidden></section>
+      <div id="toast" hidden></div>
+
+      <section id="splash">
+        <div class="logo">📸✨</div>
+        <h1>Snap Lens</h1>
+        <p class="sub">Silly faces, magic lenses.<br />Everything stays on this iPad.</p>
+        <button id="btn-start" class="pill big" disabled>Loading…</button>
+        <p id="splash-note" class="note"></p>
+      </section>
+
+      <input type="file" id="file-media" accept="image/*,video/*" hidden />
+      <input type="file" id="file-bg" accept="image/*" hidden />
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
